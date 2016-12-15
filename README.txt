@@ -24,9 +24,6 @@ PennKey: swirbulj
 =: Your Implementation :=
 =========================
 
-- Provide an overview of each of the classes in your code, and what their
-  function is in the overall game.
-
 - Game: Contains the main method. Has the run method which lays out the application, setting up the various panels and buttons and initializing the game board. There is a JTextField and associated method to get information stored in it which are both outside of the run method. These are used to store/get the current user’s nickname so it can be used by the run method and by methods in the GameBoard class.
 
 GameBoard: This class extends JPanel and is the rectangle in which the game is played. The constructor starts a timer and adds a key listener for keyboard controls. The start method is called when the start button is pressed which sets the playing boolean to true and resets the necessary variables to their initial state. The tick method (called by the timer) calls the move method and collision method, sets the score, and repaints the board. move() moves the snake head in the current direction and puts each following piece where the one in front of it just was. Collision checks for the snake head colliding with the edge of the board, itself, or a Piece object and either ends the game or adds a Piece to the end of the snake. The PaintComponent method draws the title screen if playing=false, else it draws the various game objects in their current positions.
@@ -43,8 +40,7 @@ FastFood: extends Piece. It is orange. Its eat method sets the slowTimeCounter t
 
 
 
-- Were there any significant stumbling blocks while you were implementing your
-  game (related to your design, or otherwise)?
+- Documentation of roadblocks during coding.
 
 I initially thought of using a 2D array to model the game board and store info about the snake and pieces by coordinates in the 2D array. I quickly abandoned this approach for a better implementation using a LinkedList<Piece>. This allowed me to easily store coordinates and more info in Piece objects, add them to the list when necessary, and iterate through it with ease.
 
@@ -52,8 +48,7 @@ I had a random bug appear where the width of the application would stretch to th
 
 
 
-- Evaluate your design. Is there a good separation of functionality? How well is
-  private state encapsulated? What would you refactor, if given the chance?
+- Evaluation of my design
 
 I think the design is well implemented. Changing the model from a 2D array to a LinkedList made things much easier and simpler. The GameBoard class is long and has many methods, but I like having all the related functions together in one class. This seems simpler, more functional, and less likely to produce an error to me as long as I maintained order and clarity within the class. There isn’t anything major I would refactor (I made the necessary changed in the beginning). I might try to use subtyping more efficiently for the Piece objects and various power ups to better implement eating and spawning, but I am happy with the way it is now. 
 
@@ -61,9 +56,6 @@ I think the design is well implemented. Changing the model from a 2D array to a 
 ========================
 =: External Resources :=
 ========================
-
-- Cite any external resources (libraries, images, tutorials, etc.) that you may
-  have used while implementing your game.
 
 I used the Java Documentation to implement various things that were new to me and to find the correct usage of certain things. stackoverflow.com was helpful the few times I had random bugs/error messages. 
 
