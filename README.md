@@ -3,9 +3,7 @@
 A simple variation of the classic snake game with powerups created in Java. 
 
 
-===================
-=: Core Concepts :=
-===================
+# Core Concepts 
 
   1. Collections
 	I decided to use a LinkedList to model the snake itself. The list is of type Piece, which is a class I created that stores it’s position, color, size, etc. This implementation works well because it is easy to iterate through the list to get positions and draw the snake. It is also very easy to add new Piece objects to the end when the player eats a Piece, or remove Piece objects (PoisonFood powerUp).
@@ -20,9 +18,8 @@ A simple variation of the classic snake game with powerups created in Java.
 	I use JUnit testing to test various aspects of the game such as the proper reaction to events like the snake running into itself or the wall, or eating food. I test the various power up abilities to make sure things are implemented correctly. I ran into a few unknown bugs when first implementing the power ups, the testing I did helped very much in finding and fixing them. 
 
 
-=========================
-=: Your Implementation :=
-=========================
+
+# My Implementation
 
 - Game: Contains the main method. Has the run method which lays out the application, setting up the various panels and buttons and initializing the game board. There is a JTextField and associated method to get information stored in it which are both outside of the run method. These are used to store/get the current user’s nickname so it can be used by the run method and by methods in the GameBoard class.
 
@@ -40,7 +37,7 @@ FastFood: extends Piece. It is orange. Its eat method sets the slowTimeCounter t
 
 
 
-- Documentation of roadblocks during coding.
+# Documentation of roadblocks during coding.
 
 I initially thought of using a 2D array to model the game board and store info about the snake and pieces by coordinates in the 2D array. I quickly abandoned this approach for a better implementation using a LinkedList<Piece>. This allowed me to easily store coordinates and more info in Piece objects, add them to the list when necessary, and iterate through it with ease.
 
@@ -48,14 +45,13 @@ I had a random bug appear where the width of the application would stretch to th
 
 
 
-- Evaluation of my design
+# Evaluation of my design
 
 I think the design is well implemented. Changing the model from a 2D array to a LinkedList made things much easier and simpler. The GameBoard class is long and has many methods, but I like having all the related functions together in one class. This seems simpler, more functional, and less likely to produce an error to me as long as I maintained order and clarity within the class. There isn’t anything major I would refactor (I made the necessary changed in the beginning). I might try to use subtyping more efficiently for the Piece objects and various power ups to better implement eating and spawning, but I am happy with the way it is now. 
 
 
-========================
-=: External Resources :=
-========================
+
+# External Resources 
 
 I used the Java Documentation to implement various things that were new to me and to find the correct usage of certain things. stackoverflow.com was helpful the few times I had random bugs/error messages. 
 
