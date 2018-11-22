@@ -1,6 +1,7 @@
 # SuperSnake
 
 A simple variation of the classic snake game with powerups created in Java. 
+Created fall 2016 for CIS120.
 
 
 # Core Concepts 
@@ -23,17 +24,17 @@ A simple variation of the classic snake game with powerups created in Java.
 
 - Game: Contains the main method. Has the run method which lays out the application, setting up the various panels and buttons and initializing the game board. There is a JTextField and associated method to get information stored in it which are both outside of the run method. These are used to store/get the current user’s nickname so it can be used by the run method and by methods in the GameBoard class.
 
-GameBoard: This class extends JPanel and is the rectangle in which the game is played. The constructor starts a timer and adds a key listener for keyboard controls. The start method is called when the start button is pressed which sets the playing boolean to true and resets the necessary variables to their initial state. The tick method (called by the timer) calls the move method and collision method, sets the score, and repaints the board. move() moves the snake head in the current direction and puts each following piece where the one in front of it just was. Collision checks for the snake head colliding with the edge of the board, itself, or a Piece object and either ends the game or adds a Piece to the end of the snake. The PaintComponent method draws the title screen if playing=false, else it draws the various game objects in their current positions.
+- GameBoard: This class extends JPanel and is the rectangle in which the game is played. The constructor starts a timer and adds a key listener for keyboard controls. The start method is called when the start button is pressed which sets the playing boolean to true and resets the necessary variables to their initial state. The tick method (called by the timer) calls the move method and collision method, sets the score, and repaints the board. move() moves the snake head in the current direction and puts each following piece where the one in front of it just was. Collision checks for the snake head colliding with the edge of the board, itself, or a Piece object and either ends the game or adds a Piece to the end of the snake. The PaintComponent method draws the title screen if playing=false, else it draws the various game objects in their current positions.
 
-Piece: This class models a Piece object, with fields for size, position, and color, and the methods eat and draw. These Pieces are spawned as food and can be eaten and added to the snake.
+- Piece: This class models a Piece object, with fields for size, position, and color, and the methods eat and draw. These Pieces are spawned as food and can be eaten and added to the snake.
 
-SuperFood: extends Piece. It is green (compared to the default Piece color yellow), and its eat method adds multiple pieces to the snake instead of just one. It also returns 5, which is added to the score once eaten instead of just one point.
+- SuperFood: extends Piece. It is green (compared to the default Piece color yellow), and its eat method adds multiple pieces to the snake instead of just one. It also returns 5, which is added to the score once eaten instead of just one point.
 
-PoisonFood: extends Piece. It is red. Its eat method removes multiple pieces from the snake and subtracts 3 points off of the score. 
+- PoisonFood: extends Piece. It is red. Its eat method removes multiple pieces from the snake and subtracts 3 points off of the score. 
 
-SlowFood: extends Piece. It is blue. Its eat method sets the slowTimeCounter to 40. Now for 40 ticks, the move method is called half the time and the snake moves slower. It adds two Piece objects to the snake and one point to the score.
+- SlowFood: extends Piece. It is blue. Its eat method sets the slowTimeCounter to 40. Now for 40 ticks, the move method is called half the time and the snake moves slower. It adds two Piece objects to the snake and one point to the score.
 
-FastFood: extends Piece. It is orange. Its eat method sets the slowTimeCounter to -30. To for 30 ticks, the move method is called twice as often and the snake moves faster. It adds 2 Piece objects to the snake and 6 points to the score.
+- FastFood: extends Piece. It is orange. Its eat method sets the slowTimeCounter to -30. To for 30 ticks, the move method is called twice as often and the snake moves faster. It adds 2 Piece objects to the snake and 6 points to the score.
 
 
 
